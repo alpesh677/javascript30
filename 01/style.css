@@ -31,6 +31,7 @@ html{
     background-color: rgba(0, 0, 0, 0.8);
     color: white;
     transition: all 0.7 ease;
+    transition: transform 0.1s;
 }
 
 kbd{
