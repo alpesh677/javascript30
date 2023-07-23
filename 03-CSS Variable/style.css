@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Alkatra&family=Josefin+Sans:wght@300&family=Kalam&family=Shantell+Sans:wght@300&display=swap');
+
+:root{
+    --base: #ffc600;
+    --blur: 10px;
+    --spacing:5px;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    text-align: center;
+    line-height: 2.1;
+    background-color: radial-gradient(circle at 0% 5%, rgb(62, 131, 235), rgb(6, 6, 6));
+    color: white;
+    font-family: 'Alkatra', cursive;
+    font-size: 2rem;
+}
+
+img{
+    padding: var(--spacing);
+    background: var(--base);
+    filter: blur(var(--blur));
+    width: 40%;
+    box-shadow: 0 29px 52px rgba(0,0,0,0.40), 0 25px 16px rgba(0,0,0,0.20);
+}
+
+.h1{
+    color: var(--base);
+}
+
+input{
+    width: 100px;
+}
