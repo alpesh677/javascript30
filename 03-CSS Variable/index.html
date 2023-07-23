@@ -1,1 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Variables</title>
+    <link rel="stylesheet" href="style.css" class="css">
+</head>
+<body>
+    <div>
+        <div>
+            <h2>Update <span class = "h1">CSS</span> Variables with <span class="h1">JS</span> </h2>
 
+            <div class="controls">
+                <label for="spacing">Spacing: </label>
+                <input type="range" name="spacing" id="spacing" min="10" max="200" value="20" data-sizing="px">
+
+                <label for="blur">Blur: </label>
+                <input type="range" name="blur" id="blur" min="0" max="25" value="10" data-sizing="px">
+
+                <label for="base">Base Color</label>
+                <input type="color" name="base" id="base" value="#ffc600">
+            </div>
+
+            <img src="https://source.unsplash.com/900x900/?Nature" alt="random-image">
+        </div>
+    </div>
+
+    <script>
+        const input = document.querySelectorAll(".controls input");
+        console.log(input);
+
+        function handle (){
+            const suffix = this.dataset.sizing || "";
+            document.documentElement.style.setProperty(`--${this.name}` , 
+            this.value + suffix
+            );
+        }
+
+        input.forEach((input)=>{
+            input.addEventListener('change', handle)
+        });
+
+        input.forEach((input)=>{
+            input.addEventListener('mousemove', handle)
+        });
+    </script>
+</body>
+</html>
