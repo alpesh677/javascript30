@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Kalam&family=Shadows+Into+Light&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 1.3rem;
+    background: rgb(65, 9, 121);
+    background: radial-gradient(circle, rgba(65, 9, 121, 1) 0%, rgba(58, 10, 105, 1) 43%, rgba(0, 0, 0, 1) 100%);
+}
+
+.inbox{
+    max-width: 25rem;
+    background-color: #e8e6e3;
+    margin: 5rem auto;
+    border-radius: 18px;
+    box-shadow: 10px 10px 0 rgba(0, 0, 0, 0.1);
+}
+
+.item{
+    border-radius: 10px;
+    display: flex;
+    padding: 10px 5px;
+    align-items: center;
+    border-bottom: 1px solid #f1f1f1;
+}
+
+.item:last-child{
+    border-bottom: none;
+}
+
+input[type = "checkbox"]{
+    margin: 1rem;
+}
+
+.item input[type="checkbox"]:checked + p {
+    text-decoration: line-through;
+}
+p{
+    letter-spacing: 1px;
+    text-transform: capitalize;
+    font-weight: 600;
+    transition: background 0.2s;
+    flex: 1;
+    border-right: 1px solid #f1f1f1;
+}
