@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Refrence vs Copy</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"></script>
+</head>
+
+<body>
+    <script>
+        //start with Strings , numbers and boolean
+
+        let age = 20;
+        let age2 = age;  // this is copy of original array
+        age = 30;
+        console.log(age, age2);
+
+        //Strings
+        let name = "Apex";
+        let name2 = name; //this is copy of the string
+        name = "legends";
+        console.log(name2, name);
+
+        //let's say we have an array
+        const games = ["valorant", "GTA5", "Apex legends", "PUBG PC"];
+
+        // const game = games; // this will refrence to the original array
+        // game[2] = "RDR2";   //so this will change the original Array
+        console.log(games);
+
+        //for copy
+        //one way
+        const game2 = games.slice();   //make copy of array
+        game2[2] = "hogwarts legacy";  // does not change the original array;
+        console.log(game2);
+
+        //second way
+        const game3 = [].concat(games);
+        game3[2] = "RDR2";
+        console.log(game3);
+
+        //third way use new ES6 spread
+        const game4 = [...games];
+        game4[1] = "RDR2";
+        console.log(game4);
+
+        //same things goes for the Objects
+        const person = {
+            name: "alpesh",
+            age: 20
+        }
+
+        // const captain = person; // this is refrence to object not copy of object
+
+        //to make a copy of a object
+        const captain2 = Object.assign([], person, { age: 21 });
+        console.log(captain2, person);
+
+        //second way is object ...spread
+        const captain3 = { ...person };
+        console.log(captain3);
+
+
+        // Things to note - this is only 1 level deep - both for Arrays and Objects. lodash has a cloneDeep method, but you should think twice before using it.
+        //for example
+
+        
+        const person2 = {
+            name: 'alpesh',
+            age: 20,
+            social: {
+                twitter: '@alpeshbaria677',
+                facebook: '@alpesh'
+            }
+        }
+
+        const dev = { ...person2 }
+        dev.age = "21"  // this will not change in Original object
+        dev.social.twitter = "@coolman"; //this will change in original object
+        console.log(dev);
+        console.log(person2);
+
+        //another method for this
+        const captain4 = JSON.parse(JSON.stringify(person2));
+        captain4.number = 87;
+
+        //cloneDeep method
+        const captain5 = _.cloneDeep(person2);
+        console.log( "captain5");  //this is deep level copy 
+        captain5.social.facebook = "abc";
+        console.log(captain5);     // this will not change the original object 
+
+    </script>
+</body>
+
+</html>
