@@ -1,0 +1,54 @@
+html {
+    font-size: 1rem;
+}
+
+body {
+    background: #9cbd66;
+    font-family: "helvetica neue";
+    font-weight: 200;
+    font-size: 2rem;
+}
+
+.words {
+    max-width: 45rem;
+    margin: 3rem auto;
+    background: #d2fdc5;
+    border-radius: 5px;
+    box-shadow: 10px 10px 0 rgba(0, 0, 0, 0.1);
+    padding: 1rem 2rem 1rem 5rem;
+    background-size: 100% 3rem;
+    position: relative;
+    line-height: 3rem;
+}
+
+p {
+    margin: 0 0 3rem;
+}
+
+.words:before {
+    content: "";
+    position: absolute;
+    width: 4px;
+    top: 0;
+    left: 30px;
+    bottom: 0;
+    border: 1px solid;
+    border-color: transparent #b3b2b2;
+}
+
+@media (max-width: 500px) {
+    body {
+        font-size: 1.5rem;
+    }
+
+    .words {
+        margin: 3rem 1rem;
+        padding: 1rem 2rem 1rem 3rem;
+        line-height: 2rem;
+    }
+
+    p {
+        margin: 0 0 1rem;
+    }
+
+}
