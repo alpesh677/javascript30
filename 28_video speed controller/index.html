@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>video speed controller</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+</head>
+<style>
+    body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url(https://images.unsplash.com/photo-1446729444801-31245ddba81a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80);
+    background-size: cover;
+    font-family: sans-serif;
+  }
+  
+  .wrapper {
+    width: 53rem;
+    display: flex;
+  }
+  
+  video {
+    box-shadow: 0 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  
+  .speed {
+    background: #efefef;
+    flex: 1;
+    display: flex;
+    align-items: flex-start;
+    margin: 0.625rem;
+    border-radius: 50px;
+    box-shadow: 0 0 1px 3px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+  
+  .speed-bar {
+    width: 100%;
+    background: linear-gradient(10deg, #ff9a8b 0%, #f6d365 100%);
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2px;
+    height: 16.3%;
+  }
+
+</style>
+<body>
+    <div class="wrapper">
+        <video src="tom and jerry.mp4" width="800" height="450" class="flex" loop controls></video>
+
+        <div class="speed">
+            <div class="speed-bar">1</div>
+        </div>
+    </div>
+
+    <script>
+        const speed = document.querySelector(".speed");
+        const bar = document.querySelector(".speed-bar");
+        const video = document.querySelector(".flex")
+
+        function handleSpeed(e){
+            const y = e.pageY - this.offsetTop;
+            const percent = y / this.offsetHeight;
+
+            const min = 0.4;
+            const max= 4;
+            const height = Math.round(percent * 100) + "%";
+            const playbackRate = percent * (max - min) + min;
+            bar.style.height = height;
+            bar.textContent = playbackRate.toFixed(2) + "x";
+            video.playbackRate = playbackRate;
+        }
+
+        speed.addEventListener("mousemove", handleSpeed);
+    </script>
+</body>
+</html>
