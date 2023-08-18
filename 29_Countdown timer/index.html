@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Countdown Timer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="timer">
+        <div class="timer-controls">
+            <button class="timer-button" data-time= "20">20 Secs</button>
+            <button class="timer-button" data-time= "300">Work 5</button>
+            <button class="timer-button" data-time= "900">Quick 15</button>
+            <button class="timer-button" data-time= "1200">Snake 20</button>
+            <button class="timer-button" data-time= "3600">Lunch break</button>
+
+            <form action="#" name="customForm" id="customform">
+                <input type="text" name="minutes" placeholder="Enter the minutes" style="outline: slateblue;">
+            </form>
+        </div>
+
+
+        <div class="display">
+            <h1 class="time-left"></h1>
+            <p class="time-end"></p>
+        </div>
+
+        <div class="timer-controls">
+            <button class="timer-button" id="pause-button">Pause</button>
+            <button class="timer-button" id="resume-button">Resume</button>
+        </div>
+    </div>
+
+    <audio src="alarm.mp3" id="timer-alert"></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
