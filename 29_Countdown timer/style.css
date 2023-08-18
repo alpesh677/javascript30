@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Handlee&family=Kalam&family=Satisfy&family=Shadows+Into+Light&display=swap');
+
+html {
+    box-sizing: border-box;
+    font-size: 0.625rem;
+    background: rgb(14, 165, 222);
+    background: linear-gradient(63deg, rgba(14, 165, 222, 1) 0%, rgba(4, 130, 255, 1) 46%, rgba(29, 86, 253, 1) 71%);
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    text-align: center;
+    font-family: 'Handlee', cursive;
+}
+
+.timer {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+.timer-controls {
+    display: flex;
+}
+
+.timer-controls>* {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.timer-controls input {
+    flex: 1;
+    border: 0;
+    padding: 2rem;
+}
+
+.timer-button {
+    background: none;
+    border: 0;
+    cursor: pointer;
+    color: white;
+    font-size: 2rem;
+    text-transform: uppercase;
+    background: rgba(0, 0, 0, 0.1);
+    border-bottom: 3px solid rgba(0, 0, 0, 0.2);
+    border-right: 1px solid rgba(0, 0, 0, 0.2);
+    font-family: 'Handlee', cursive;
+}
+
+.timer-button:hover,
+.timer-button:focus {
+    background: rgba(0, 0, 0, 0.2);
+    outline: 0;
+}
+
+.display {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.time-left {
+    font-weight: 100;
+    font-size: 20rem;
+    margin: 0;
+    color: white;
+    text-shadow: 4px 4px 0 rgba(0, 0, 0, 0.05);
+}
+
+.time-end{
+    font-size: 4rem;
+    color: white;
+}
